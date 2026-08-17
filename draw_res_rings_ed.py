@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
 
 # ===== USER INPUT =====
-input_path = "D:\\00010.tiff"
-output_path = "D:\\example_with_rings.png"
+input_path = r"C:\path\to\your\scaled\image.tiff"
+output_path = r"C:\output\path\example_with_rings.png"
 
 pixel_size_um = 55.0          # um, physical detector pixel size in micrometers
 camera_length_mm = 757.0        # mm
@@ -65,8 +65,7 @@ def draw_scale_bar():
             color="white", fontsize=8, ha="center", va="top")
 
 
-if __name__ == "__main__":
-
+def main():
     img = plt.imread(input_path)
     if img.ndim == 3:
         img = img.mean(axis=2)
@@ -86,3 +85,8 @@ if __name__ == "__main__":
     plt.show()
 
     print(f"Saved: {output_path}")
+
+
+if __name__ == "__main__":
+    main()
+    
